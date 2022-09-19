@@ -1,0 +1,13 @@
+{
+  "EXTENSIONS": {
+    "crazyflie": { "enabled": true },
+    "libmotioncapture": {
+      "connections": [
+        {
+          "type": "optitrack",
+          "hostname": "192.168.1.141"
+        }
+      ]
+    }
+  }
+}
