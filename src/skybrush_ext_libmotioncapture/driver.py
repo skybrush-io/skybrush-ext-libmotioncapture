@@ -81,7 +81,10 @@ def main() -> int:
     options = dict(args.parameters)
 
     try:
-        mc = motioncapture.connect(args.type, options)
+        if args.type == "test":
+            mc = motioncapture.MotionCaptureTest(0.04, [])
+        else:
+            mc = motioncapture.connect(args.type, options)
     except Exception as ex:
         if "incompatible function arguments" in str(ex):
             # old libmotioncapture where 'options' had to be a string
@@ -105,7 +108,10 @@ def main() -> int:
 
         items.clear()
         for name, obj in mc.rigidBodies.items():
-            items.append((name, tuple(round(float(x), 3) for x in obj.position)))
+            rot = obj.rotation
+            encoded_pos = tuple(round(float(x), 3) for x in obj.position)
+            encoded_rot = (rot.w, rot.x, rot.y, rot.z) if rot is not None else None
+            items.append((name, encoded_pos, encoded_rot))
 
         if items:
             send(message)

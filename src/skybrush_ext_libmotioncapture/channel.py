@@ -62,13 +62,15 @@ class LibmotioncaptureConnection:
                 elif type == "frame":
                     frame = frame_factory()
                     items: Iterable[
-                        Tuple[str, Tuple[float, float, float]]
+                        Tuple[
+                            str,
+                            Tuple[float, float, float],
+                            Optional[Tuple[float, float, float, float]],
+                        ]
                     ] = message.get("items", ())
 
-                    # TODO(ntamas): handle pose information if we want to
-
-                    for name, position in items:
-                        frame.add_item(name, position)
+                    for name, position, rotation in items:
+                        frame.add_item(name, position, rotation)
 
                     yield frame
                 else:
