@@ -1,7 +1,7 @@
 [tool.poetry]
 
 name = "skybrush-ext-libmotioncapture"
-version = "1.0.0"
+version = "1.1.0"
 description = "libmotioncapture mocap support for Skybrush Server"
 authors = ["Tamas Nepusz <ntamas@gmail.com>"]
 license = "UNLICENSED"
