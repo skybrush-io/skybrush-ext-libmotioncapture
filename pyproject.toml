@@ -7,7 +7,7 @@ authors = ["Tamas Nepusz <ntamas@gmail.com>"]
 license = "UNLICENSED"
 packages = [
   # Change this to the name of the folder in src/ containing your extension
-  { include = "skybrush_ext_libmotioncapture", from = "src" }
+  { include = "skybrush_ext_libmotioncapture", from = "src" },
 ]
 
 [[tool.poetry.source]]
@@ -39,7 +39,11 @@ libmotioncapture = "skybrush_ext_libmotioncapture"
 [tool.poetry.scripts]
 skybrushd = "flockwave.server.launcher:start"
 
+[tool.ruff]
+ignore = ["B905", "C901", "E402", "E501"]
+line-length = 80
+select = ["B", "C", "E", "F", "W"]
+
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
-

@@ -100,7 +100,7 @@ class LibmotioncaptureMocapExtension(Extension):
                 if count > 1:
                     self.log.info(f"Using {count} libmotioncapture connections")
                 elif count:
-                    self.log.info(f"Using libmotioncapture connection")
+                    self.log.info("Using libmotioncapture connection")
 
     async def handle_libmotioncapture_connection(
         self, connection: ProcessConnection, id: str, name: str

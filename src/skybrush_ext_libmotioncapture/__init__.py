@@ -1,7 +1,7 @@
 from .extension import LibmotioncaptureMocapExtension as construct
 from .version import __version__
 
-__all__ = ("construct",)
+__all__ = ("construct", "__version__")
 
 description = (
     "Connection to motion capture systems using a libmotioncapture abstraction layer"

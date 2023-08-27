@@ -3,7 +3,7 @@
 from contextlib import contextmanager
 from pathlib import Path
 from tempfile import NamedTemporaryFile
-from typing import Callable, Iterator, Optional
+from typing import Iterator, Optional
 
 
 @contextmanager
@@ -27,6 +27,6 @@ def extracted_driver_script() -> Iterator[Path]:
         try:
             if path:
                 path.unlink(missing_ok=True)
-        except Exception as ex:
+        except Exception:
             # this is okay
             pass

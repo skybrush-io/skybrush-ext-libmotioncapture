@@ -91,10 +91,12 @@ def main() -> int:
             try:
                 hostname = options.pop("hostname")
             except KeyError:
-                raise RuntimeError("hostname not specified")
+                raise RuntimeError("hostname not specified") from None
 
             if options:
-                raise RuntimeError("unhandled options: " + ", ".join(options.keys()))
+                raise RuntimeError(
+                    "unhandled options: " + ", ".join(options.keys())
+                ) from None
 
             mc = motioncapture.connect(args.type, hostname)
         else:
