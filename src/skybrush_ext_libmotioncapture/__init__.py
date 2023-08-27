@@ -1,4 +1,5 @@
 from .extension import LibmotioncaptureMocapExtension as construct
+from .version import __version__
 
 __all__ = ("construct",)
 
