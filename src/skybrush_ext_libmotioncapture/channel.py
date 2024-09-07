@@ -27,7 +27,7 @@ class LibmotioncaptureConnection:
     JSON format.
     """
 
-    _channel: MessageChannel[Any]
+    _channel: MessageChannel[Any, Any]
     """The message channel on which the JSON messages are received from the
     libmotioncapture wrapper process
     """

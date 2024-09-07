@@ -18,7 +18,9 @@ from typing import Any, Callable, Optional, Tuple, TypeVar
 
 T = TypeVar("T")
 
-encoder = json.JSONEncoder(ensure_ascii=True, sort_keys=True, separators=(",", ":"))
+encoder = json.JSONEncoder(
+    ensure_ascii=True, sort_keys=True, separators=(",", ":")
+)
 
 
 def key_value_pair(value: str) -> Tuple[str, str]:
@@ -112,7 +114,9 @@ def main() -> int:
         for name, obj in mc.rigidBodies.items():
             rot = obj.rotation
             encoded_pos = tuple(round(float(x), 3) for x in obj.position)
-            encoded_rot = (rot.w, rot.x, rot.y, rot.z) if rot is not None else None
+            encoded_rot = (
+                (rot.w, rot.x, rot.y, rot.z) if rot is not None else None
+            )
             items.append((name, encoded_pos, encoded_rot))
 
         if items:

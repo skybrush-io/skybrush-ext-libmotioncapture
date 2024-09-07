@@ -57,7 +57,9 @@ class LibmotioncaptureMocapExtension(Extension):
                 for index, connection_spec in enumerate(connection_specs):
                     type = connection_spec.get("type")
                     if not type:
-                        self.log.error("Connection specification #{index} has no type")
+                        self.log.error(
+                            "Connection specification #{index} has no type"
+                        )
                         continue
 
                     conn_id = f"lmc/{index}"
@@ -73,7 +75,9 @@ class LibmotioncaptureMocapExtension(Extension):
                             args.append(f"{key}={value}")
                     args.append(type)
 
-                    connection = ProcessConnection.create_in_nursery(nursery, args)
+                    connection = ProcessConnection.create_in_nursery(
+                        nursery, args
+                    )
                     stack.enter_context(
                         app.connection_registry.use(
                             connection,

@@ -3,9 +3,7 @@ from .version import __version__
 
 __all__ = ("construct", "__version__")
 
-description = (
-    "Connection to motion capture systems using a libmotioncapture abstraction layer"
-)
+description = "Connection to motion capture systems using a libmotioncapture abstraction layer"
 dependencies = ("motion_capture",)
 tags = ("experimental",)
 schema = {
