@@ -10,19 +10,16 @@ Installation
 
 1. Check out this repository using git.
 
-2. Install [`poetry`](https://python-poetry.org) if you haven't done so yet;
-   `poetry` is a tool that allows you to install Skybrush Server and the
+2. Install [`uv`](https://astral.sh/uv) if you haven't done so yet;
+   `uv` is a tool that allows you to install Skybrush Server and the
    extension you are working on in a completely isolated virtual environment.
 
-3. Run `poetry install`; this will create a virtual environment and install
+3. Run `uv sync`; this will create a virtual environment and install
    Skybrush Server with all required dependencies in it, as well as the code
    of the extension.
 
-4. Run `poetry shell` to open a shell associated to the virtual environment
-   that you have just created.
-
-5. Modify `skybrushd.jsonc` to point to the host where the Qualisys Track
+4. Modify `skybrushd.jsonc` to point to the host where the Qualisys Track
    Manager app is running.
 
-6. In the shell prompt, type `skybrushd -c skybrushd.jsonc` to start the server
-   with a configuration file that loads the extension.
+5. In the shell prompt, type `uv run skybrushd -c skybrushd.jsonc` to start
+   the server with a configuration file that loads the extension.
